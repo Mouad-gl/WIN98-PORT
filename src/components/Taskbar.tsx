@@ -1,5 +1,6 @@
 import { useWindows } from '../context/WindowManager'
 import { APPS, APP_ORDER } from '../apps/registry'
+import { asset } from '../lib/asset'
 import { Clock } from './Clock'
 
 interface TaskbarProps {
@@ -22,7 +23,7 @@ export function Taskbar({ startOpen, onStartToggle }: TaskbarProps) {
         className={`start-button${startOpen ? ' active' : ''}`}
         onClick={onStartToggle}
       >
-        <img src="/icons/logo.svg" alt="" className="start-logo" aria-hidden />
+        <img src={asset('icons/logo.svg')} alt="" className="start-logo" aria-hidden />
         <span>Start</span>
       </button>
 

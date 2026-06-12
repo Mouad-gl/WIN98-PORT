@@ -2,13 +2,15 @@
  * Your projects / design work.
  *
  * Each project has a `media` array of images and/or videos.
- *  - Put your files in /public/media/ and reference them as '/media/your-file.png'
+ *  - Put your files in /public/media/ and reference them via asset('media/your-file.png')
  *  - `type: 'video'` items use a <video> tag; give them a `poster` image so the
  *    thumbnail loads instantly and the video only downloads when played.
  *
  * The placeholders below point at /media/placeholder.svg so the site looks
  * intentional before you've added real assets — just swap the `src` values.
  */
+
+import { asset } from '../lib/asset'
 
 export type MediaType = 'image' | 'video'
 
@@ -34,7 +36,7 @@ export interface Project {
   links?: { label: string; url: string }[]
 }
 
-const PLACEHOLDER = '/media/placeholder.svg'
+const PLACEHOLDER = asset('media/placeholder.svg')
 
 export const projects: Project[] = [
   {

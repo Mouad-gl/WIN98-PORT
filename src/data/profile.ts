@@ -38,9 +38,9 @@ export const profile = {
 
   socials: [
     { label: 'GitHub', url: 'https://github.com/mouad-gl', handle: '@mouad-gl' },
-    // TODO: replace these with your real links (or delete them).
+    { label: 'Behance', url: 'https://www.behance.net/mouadguaalla', handle: '@mouadguaalla' },
+    // TODO: replace with your real LinkedIn (or delete it).
     { label: 'LinkedIn', url: 'https://www.linkedin.com/', handle: 'add-your-linkedin' },
-    { label: 'Behance / Dribbble', url: 'https://www.behance.net/', handle: 'add-your-portfolio' },
   ] as SocialLink[],
 
   skills: [

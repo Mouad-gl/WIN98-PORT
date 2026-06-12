@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import type { AppId } from '../types'
 import { APPS, APP_ORDER } from '../apps/registry'
+import { asset } from '../lib/asset'
 import { profile } from '../data/profile'
 
 interface StartMenuProps {
@@ -68,7 +69,7 @@ export function StartMenu({ open, onClose, onLaunch, onShutDown }: StartMenuProp
             <li className="start-menu-sep" role="separator" />
             <li>
               <button type="button" onClick={onShutDown}>
-                <img src="/icons/shutdown.svg" alt="" aria-hidden />
+                <img src={asset('icons/shutdown.svg')} alt="" aria-hidden />
                 <span>Shut Down…</span>
               </button>
             </li>

@@ -1,8 +1,9 @@
 import { useCallback, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { MediaItem } from '../data/projects'
+import { asset } from '../lib/asset'
 
-const FALLBACK = '/media/placeholder.svg'
+const FALLBACK = asset('media/placeholder.svg')
 
 interface MediaViewerProps {
   title: string

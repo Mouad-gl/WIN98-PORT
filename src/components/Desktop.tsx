@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useWindows } from '../context/WindowManager'
 import { APPS, APP_ORDER } from '../apps/registry'
+import { shortcuts } from '../data/shortcuts'
 import { DesktopIcon } from './DesktopIcon'
 import { Window } from './Window'
 import { Taskbar } from './Taskbar'
@@ -25,6 +26,14 @@ export function Desktop({ onShutDown }: DesktopProps) {
             icon={APPS[id].icon}
             label={APPS[id].title}
             onOpen={() => openApp(id)}
+          />
+        ))}
+        {shortcuts.map((s) => (
+          <DesktopIcon
+            key={s.id}
+            icon={s.icon}
+            label={s.label}
+            onOpen={() => window.open(s.href, '_blank', 'noopener,noreferrer')}
           />
         ))}
       </div>

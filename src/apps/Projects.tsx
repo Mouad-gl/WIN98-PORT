@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { projects, type MediaItem, type Project } from '../data/projects'
 import { MediaViewer } from '../components/MediaViewer'
+import { asset } from '../lib/asset'
 
-const FALLBACK = '/media/placeholder.svg'
+const FALLBACK = asset('media/placeholder.svg')
 
 function thumbSrc(item: MediaItem): string {
   const raw = item.type === 'video' ? item.poster : item.src

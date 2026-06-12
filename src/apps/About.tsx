@@ -1,5 +1,6 @@
 import { profile } from '../data/profile'
 import { useWindows } from '../context/WindowManager'
+import { asset } from '../lib/asset'
 
 export default function About() {
   const { openApp } = useWindows()
@@ -7,7 +8,7 @@ export default function About() {
   return (
     <div className="app about-app">
       <div className="about-header">
-        <img className="about-avatar" src="/avatar.svg" alt={profile.name} />
+        <img className="about-avatar" src={asset('avatar.svg')} alt={profile.name} />
         <div className="about-headline">
           <h2>{profile.name}</h2>
           <p className="about-role">{profile.role}</p>

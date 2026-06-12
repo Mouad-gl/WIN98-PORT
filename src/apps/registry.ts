@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 import type { AppDefinition, AppId } from '../types'
+import { asset } from '../lib/asset'
 
 /**
  * Central registry of every app/window. The desktop icons, Start menu and
@@ -10,7 +11,7 @@ export const APPS: Record<AppId, AppDefinition> = {
   about: {
     id: 'about',
     title: 'About Me',
-    icon: '/icons/user.svg',
+    icon: asset('icons/user.svg'),
     Component: lazy(() => import('./About')),
     defaultWidth: 480,
     defaultHeight: 440,
@@ -18,7 +19,7 @@ export const APPS: Record<AppId, AppDefinition> = {
   projects: {
     id: 'projects',
     title: 'My Projects',
-    icon: '/icons/folder.svg',
+    icon: asset('icons/folder.svg'),
     Component: lazy(() => import('./Projects')),
     defaultWidth: 640,
     defaultHeight: 480,
@@ -26,7 +27,7 @@ export const APPS: Record<AppId, AppDefinition> = {
   hobbies: {
     id: 'hobbies',
     title: 'Hobbies',
-    icon: '/icons/star.svg',
+    icon: asset('icons/star.svg'),
     Component: lazy(() => import('./Hobbies')),
     defaultWidth: 520,
     defaultHeight: 420,
@@ -34,7 +35,7 @@ export const APPS: Record<AppId, AppDefinition> = {
   contact: {
     id: 'contact',
     title: 'Contact',
-    icon: '/icons/mail.svg',
+    icon: asset('icons/mail.svg'),
     Component: lazy(() => import('./Contact')),
     defaultWidth: 460,
     defaultHeight: 470,
@@ -42,7 +43,7 @@ export const APPS: Record<AppId, AppDefinition> = {
   minesweeper: {
     id: 'minesweeper',
     title: 'Minesweeper',
-    icon: '/icons/mine.svg',
+    icon: asset('icons/mine.svg'),
     Component: lazy(() => import('./Minesweeper')),
     defaultWidth: 320,
     defaultHeight: 400,
