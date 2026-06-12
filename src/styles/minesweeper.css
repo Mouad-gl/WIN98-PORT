@@ -1,0 +1,135 @@
+/* ============================================================
+   Minesweeper — classic look
+   ============================================================ */
+
+.mines-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 2px;
+}
+
+.mines-levels {
+  display: flex;
+  gap: 4px;
+}
+
+.mines-levels button {
+  font-size: 11px;
+  padding: 2px 8px;
+}
+
+.mines-levels button.active {
+  font-weight: bold;
+  box-shadow:
+    inset -1px -1px 0 #fff,
+    inset 1px 1px 0 #808080,
+    inset -2px -2px 0 #dfdfdf,
+    inset 2px 2px 0 #0a0a0a;
+}
+
+/* Outer raised frame */
+.mines-frame {
+  padding: 8px;
+  background: var(--silver);
+  box-shadow:
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #fff,
+    inset -2px -2px 0 #404040,
+    inset 2px 2px 0 #dfdfdf;
+}
+
+/* HUD: counter — face — timer */
+.mines-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 4px 6px;
+  box-shadow:
+    inset 1px 1px 0 #808080,
+    inset -1px -1px 0 #fff;
+}
+
+.mines-led {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #ff2d2d;
+  background: #000;
+  padding: 2px 6px;
+  min-width: 52px;
+  text-align: right;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.mines-face {
+  width: 30px;
+  height: 30px;
+  font-size: 17px;
+  line-height: 1;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* The grid */
+.mines-grid {
+  display: grid;
+  gap: 0;
+  box-shadow:
+    inset 1px 1px 0 #808080,
+    inset -1px -1px 0 #fff;
+}
+
+.mine-cell {
+  width: var(--cell);
+  height: var(--cell);
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  background: var(--silver);
+  border: none;
+  box-shadow:
+    inset -2px -2px 0 #808080,
+    inset 2px 2px 0 #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mine-cell:active {
+  box-shadow: inset 1px 1px 0 #808080;
+}
+
+.mine-cell.revealed {
+  background: #bdbdbd;
+  box-shadow: inset 1px 1px 0 #9a9a9a;
+  border: 1px solid #9a9a9a;
+  cursor: default;
+}
+
+.mine-cell.boom {
+  background: #ff2d2d;
+}
+
+/* Classic Minesweeper number colors */
+.num-1 { color: #0000ff; }
+.num-2 { color: #008100; }
+.num-3 { color: #ff0000; }
+.num-4 { color: #000084; }
+.num-5 { color: #840000; }
+.num-6 { color: #008284; }
+.num-7 { color: #000000; }
+.num-8 { color: #808080; }
+
+.mines-hint {
+  font-size: 11px;
+  margin: 0;
+}
